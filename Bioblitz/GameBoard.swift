@@ -9,9 +9,6 @@ import AVFoundation
 import SwiftUI
 
 class GameBoard: ObservableObject {
-    
-    
-    
     let rowCount = 11
     let columnCount = 22
 
@@ -23,7 +20,7 @@ class GameBoard: ObservableObject {
     @Published var winner: String? = nil
 
     private var bacteriaBeingInfected = 0
-    
+
     private let soundController = SoundController()
 
     init() {
@@ -189,7 +186,4 @@ class GameBoard: ObservableObject {
             }
         }
     }
-    
- 
-
 }

@@ -26,7 +26,6 @@ struct ContentView: View {
                 Text("RED: \(board.redScore)")
                     .padding(.horizontal)
                     .background(Capsule().fill(.red).opacity(board.currentPlayer == .red ? 1 : 0))
-                
             }
             .font(.system(size: 36).weight(.black))
 
@@ -73,8 +72,6 @@ struct ContentView: View {
                 .resizable()
         })
         .preferredColorScheme(.dark)
-        
-        
     }
 }
 
