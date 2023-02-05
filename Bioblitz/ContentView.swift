@@ -41,7 +41,6 @@ struct ContentView: View {
 
                                 BacteriaView(bacteria: bacteria) {
                                     board.rotate(bacteria: bacteria)
-                                    board.playButtonTapSound()
                                 }
                             }
                         }

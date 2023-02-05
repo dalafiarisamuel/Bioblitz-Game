@@ -10,9 +10,7 @@ import SwiftUI
 
 class GameBoard: ObservableObject {
     
-    private var backgroundMusicPlayer: AVAudioPlayer?
-    private var successPlayer: AVAudioPlayer?
-    private var buttonTapPlayer: AVAudioPlayer?
+    
     
     let rowCount = 11
     let columnCount = 22
@@ -25,13 +23,15 @@ class GameBoard: ObservableObject {
     @Published var winner: String? = nil
 
     private var bacteriaBeingInfected = 0
+    
+    private let soundController = SoundController()
 
     init() {
         reset()
     }
 
     func reset() {
-        playGameSound()
+        soundController.playGameSound()
         winner = nil
         currentPlayer = .green
         redScore = 1
@@ -147,7 +147,7 @@ class GameBoard: ObservableObject {
         objectWillChange.send()
         bacteria.direction = bacteria.direction.next
         infect(from: bacteria)
-        AudioServicesPlaySystemSound(1026)
+        soundController.playButtonTapSound()
     }
 
     func changePlayer() {
@@ -179,10 +179,10 @@ class GameBoard: ObservableObject {
             withAnimation(.spring()) {
                 if redScore == 0 {
                     winner = "Green"
-                    playSuccessSound()
+                    soundController.playSuccessSound()
                 } else if greenScore == 0 {
                     winner = "Red"
-                    playSuccessSound()
+                    soundController.playSuccessSound()
                 } else {
                     changePlayer()
                 }
@@ -192,27 +192,4 @@ class GameBoard: ObservableObject {
     
  
 
-    func playGameSound() {
-        backgroundMusicPlayer?.stop()
-        let url = Bundle.main.url(forResource: "epic_battle_music", withExtension: "mp3")
-        backgroundMusicPlayer = try! AVAudioPlayer(contentsOf: url!)
-        backgroundMusicPlayer?.numberOfLoops = -1
-        backgroundMusicPlayer?.volume = 0.3
-        backgroundMusicPlayer?.play()
-    }
-    
-    func playSuccessSound() {
-        backgroundMusicPlayer?.stop()
-        successPlayer?.stop()
-        let url = Bundle.main.url(forResource: "success_fanfare_trumpets", withExtension: "mp3")
-        successPlayer = try! AVAudioPlayer(contentsOf: url!)
-        successPlayer?.play()
-    }
-    
-    func playButtonTapSound() {
-        buttonTapPlayer?.stop()
-        let url = Bundle.main.url(forResource: "button_tap", withExtension: "mp3")
-        buttonTapPlayer = try! AVAudioPlayer(contentsOf: url!)
-        buttonTapPlayer?.play()
-    }
 }

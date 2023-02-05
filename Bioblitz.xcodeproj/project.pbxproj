@@ -17,6 +17,7 @@
 		85F11EC1298EBBB700CBA864 /* epic_battle_music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 85F11EC0298EBBB700CBA864 /* epic_battle_music.mp3 */; };
 		85F11EC3298F2E2200CBA864 /* success_fanfare_trumpets.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 85F11EC2298F2E2200CBA864 /* success_fanfare_trumpets.mp3 */; };
 		85F11EC7298FDC7700CBA864 /* button_tap.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 85F11EC6298FDC7700CBA864 /* button_tap.mp3 */; };
+		85F11EF22990182400CBA864 /* SoundController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F11EF12990182400CBA864 /* SoundController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		85F11EC0298EBBB700CBA864 /* epic_battle_music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = epic_battle_music.mp3; sourceTree = "<group>"; };
 		85F11EC2298F2E2200CBA864 /* success_fanfare_trumpets.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = success_fanfare_trumpets.mp3; sourceTree = "<group>"; };
 		85F11EC6298FDC7700CBA864 /* button_tap.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = button_tap.mp3; sourceTree = "<group>"; };
+		85F11EF12990182400CBA864 /* SoundController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				85E77FB2298DBFD70024B348 /* Preview Content */,
 				85E77FBB298DC3380024B348 /* Bacteria.swift */,
 				85E77FBD298DC5AE0024B348 /* BacteriaView.swift */,
+				85F11EF12990182400CBA864 /* SoundController.swift */,
 			);
 			path = Bioblitz;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				85E77FAF298DBFD60024B348 /* ContentView.swift in Sources */,
+				85F11EF22990182400CBA864 /* SoundController.swift in Sources */,
 				85E77FAD298DBFD60024B348 /* BioblitzApp.swift in Sources */,
 				85E77FC0298DCB0F0024B348 /* GameBoard.swift in Sources */,
 				85E77FBC298DC3380024B348 /* Bacteria.swift in Sources */,
